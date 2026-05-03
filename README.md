@@ -43,7 +43,7 @@ myblog/
 
 ---
 
-## ⚙️ Setup
+## Setup
 
 ```bash
 git clone <repo-url>
