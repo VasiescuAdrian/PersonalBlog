@@ -1,0 +1,72 @@
+
+.delete-review-container {
+  max-width: 480px;
+  margin: 80px auto;
+  background-color: #fff5f5;
+  padding: 30px 35px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(229, 62, 62, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #9b2c2c;
+  text-align: center;
+}
+
+.delete-review-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #e53e3e;
+}
+
+.delete-review-container p {
+  font-size: 1.1rem;
+  margin-bottom: 35px;
+}
+
+/* Butoane */
+.delete-review-container form button {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 12px 30px;
+  border-radius: 10px;
+  border: none;
+  margin: 0 10px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(229, 62, 62, 0.4);
+}
+
+/* Buton Confirmare */
+.delete-review-container form button.confirm {
+  background-color: #e53e3e;
+  color: white;
+}
+
+.delete-review-container form button.confirm:hover {
+  background-color: #9b2c2c;
+  box-shadow: 0 7px 20px rgba(155, 44, 44, 0.6);
+}
+
+/* Buton Anulare */
+.delete-review-container form button.cancel {
+  background-color: #f0f0f0;
+  color: #555;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.delete-review-container form button.cancel:hover {
+  background-color: #d9d9d9;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .delete-review-container {
+    padding: 25px 20px;
+  }
+  
+  .delete-review-container form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin: 8px 5px;
+  }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasiescu Adrian - Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/chatbot.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+</head>
+<body>
+    <header class="chatbot-header">
+        <div class="header-content">
+            <h1 id="main-title" class="title-animation">Chatbot Interactiv</h1>
+        </div>
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </header>
+
+    <nav class="chatbot-nav">
+        <div class="nav-container">
+            <ul class="nav-list" id="main-nav">
+                <li><a href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="{% url 'about' %}"><i class="fas fa-user"></i> About me</a></li>
+                <li><a href="{% url 'galeriefoto' %}"><i class="fas fa-camera"></i> Galerie Foto</a></li>
+                <li><a href="{% url 'contact' %}"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a class="active" href="{% url 'chatbot' %}"><i class="fas fa-robot"></i> Chatbot</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="chatbot-main">
+        <div class="chat-container-wrapper" data-aos="fade-up">
+            <div class="chat-container" id="chat-container">
+                <div class="welcome-message">
+                    <strong>Bot:</strong> Bună! Sunt chatbot-ul tău interactiv. Hai să începem!
+                </div>
+            </div>
+            <form id="chat-form" class="chat-form">
+                {% csrf_token %}
+                <input type="text" id="user-input" placeholder="Scrie mesajul tău aici..." required autocomplete="off">
+                <button type="submit" id="send-button"><i class="fas fa-paper-plane"></i> Trimite</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="chatbot-footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Despre Chatbot</h3>
+                <p>Un mod interactiv de a afla mai multe despre proiectele și experiențele mele.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Linkuri rapide</h3>
+                <ul>
+                    <li><a href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="{% url 'about' %}"><i class="fas fa-user"></i> About me</a></li>
+                    <li><a href="{% url 'galeriefoto' %}"><i class="fas fa-camera"></i> Galerie Foto</a></li>
+                    <li><a href="{% url 'contact' %}"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a class="active" href="{% url 'chatbot' %}"><i class="fas fa-robot"></i> Chatbot</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Pentru contact</h3>
+                <p><i class="fas fa-envelope"></i> chatbot@adrianvasiescu.com</p>
+                <p><i class="fas fa-phone"></i> +40 123 456 789</p>
+                <p><i class="fas fa-map-marker-alt"></i> Timisoara, Romania</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Vasiescu Adrian | Toate drepturile rezervate
+        </div>
+    </footer>
+
+    <script src="{% static 'js/chatbot.js' %}"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trimite un Review</title>
+  <link rel="stylesheet" href="{% static 'css/submit_review.css' %}" />
+</head>
+<body>
+
+  <div class="review-form-container">
+    <h2>Trimite un Review</h2>
+    <form method="POST" action="{% url 'submit_review' %}">
+      {% csrf_token %}
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required />
+
+      <label for="rating">Rating</label>
+      <select name="rating" id="rating" required>
+        <option value="">Alege ratingul</option>
+        <option value="5">5 - Excelent</option>
+        <option value="4">4 - Foarte bine</option>
+        <option value="3">3 - Bine</option>
+        <option value="2">2 - Slab</option>
+        <option value="1">1 - Foarte slab</option>
+      </select>
+
+      <label for="comment">Comentariu</label>
+      <textarea name="comment" id="comment" required></textarea>
+
+      <button type="submit">Trimite Review</button>
+    </form>
+  </div>
+
+</body>
+</html>
+

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Vasiescu Adrian</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/aboutme.css' %}">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1 id="main-title" class="title-animation">Despre mine</h1>
+            <p class="subtitle">Cine sunt eu și ce mă motivează</p>
+        </div>
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </header>
+
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <ul class="nav-list" id="main-nav">
+                <li><a href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a></li>
+                <li><a class="active" href="{% url 'about' %}"><i class="fas fa-user"></i> About me</a></li>
+                <li><a href="{% url 'galeriefoto' %}"><i class="fas fa-camera"></i> Galerie Foto</a></li>
+                <li><a href="{% url 'contact' %}"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="{% url 'chatbot' %}"><i class="fas fa-robot"></i> Chatbot</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="blog-container">
+        <!-- Sectiune Profil -->
+        <article class="blog-post" data-aos="fade-up">
+            <div class="titluri">
+                <h2>Despre mine</h2>
+                <div class="post-meta">
+                    <span class="author"><i class="fas fa-user"></i> Adrian Vasiescu</span>
+                </div>
+            </div>
+            <div class="post-content">
+                <div class="image-container">
+                    <img src="{% static 'images/eu.jpg' %}" alt="Vasiescu Adrian" class="post-image hover-zoom">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                            <p>Apasă pentru a mări</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-text">
+                    <p>După cum știți deja, mă numesc Vasiescu Adrian.</p>
+                    <p>Încerc lucruri noi, pentru a obține abilități noi pe domenii diverse, îmi place să programez și doresc să cunosc cât mai multe limbaje posibile.</p>
+                    <p>Pot spune că apreciez enorm activitatea fizică de orice formă și iubesc natura, sperând că și ea mă iubește pe mine.</p>
+                    <p>Îmi place să desenez, să explorez locuri noi, să ascult muzică, să cânt la chitară, dar nu în ultimul rând, să am partide intense de gaming, lucru care mă face să aspir la cariera de game developer.</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Sectiune Educatie -->
+        <article class="blog-post" data-aos="fade-up">
+            <div class="titluri">
+                <h2>Educație</h2>
+                <div class="post-meta">
+                    <span class="author"><i class="fas fa-graduation-cap"></i> Istoric academic</span>
+                </div>
+            </div>
+            <div class="post-content">
+                <div class="post-text" style="width:100%">
+                    <table class="styled-table">
+                        <tr>
+                            <th><i class="fas fa-certificate"></i> Diplomă</th>
+                            <th><i class="far fa-calendar-alt"></i> Perioadă</th>
+                            <th><i class="fas fa-map-marker-alt"></i> Locație</th>
+                        </tr>
+                        <tr>
+                            <td>Diplomă de Bacalaureat</td>
+                            <td>Ciclul liceal 2020-2024</td>
+                            <td>Liceul Teoretic "Traian Vuia" Făget</td>
+                        </tr>
+                        <tr>
+                            <td>Certificat Cambridge</td>
+                            <td>Obținut în anul 2021</td>
+                            <td>Liceul Teoretic "David Voniga" Giroc</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </article>
+
+        <!-- Sectiune Experienta -->
+        <article class="blog-post" data-aos="fade-up">
+            <div class="titluri">
+                <h2>Experiență profesională</h2>
+                <div class="post-meta">
+                    <span class="author"><i class="fas fa-briefcase"></i> Carieră</span>
+                </div>
+            </div>
+            <div class="post-content">
+                <div class="post-text">
+                    <h3><i class="fas fa-gamepad"></i> Game Developer</h3>
+                    <p><strong>Ubisoft România</strong> | 2024 - Prezent</p>
+                    <p>Dezvoltare de jocuri video, implementare de funcționalități și remediere de bug-uri.</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Sectiune Abilitati -->
+        <article class="blog-post" data-aos="fade-up">
+            <div class="titluri">
+                <h2>Abilități</h2>
+                <div class="post-meta">
+                    <span class="author"><i class="fas fa-star"></i> Competențe</span>
+                </div>
+            </div>
+            <div class="post-content">
+                <div class="post-text">
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <i class="fas fa-laptop-code"></i>
+                            <h3>Adaptabilitate la limbaje de programare</h3>
+                            <p>Capacitate rapidă de învățare și adaptare la noi tehnologii.</p>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-users"></i>
+                            <h3>Spirit de echipă</h3>
+                            <p>Colaborare eficientă în proiecte de grup și comunicare deschisă.</p>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-bullseye"></i>
+                            <h3>Perseverență</h3>
+                            <p>Rezistență în fața provocărilor și determinare în atingerea obiectivelor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Sectiune Realizari -->
+        <article class="blog-post" data-aos="fade-up">
+            <div class="titluri">
+                <h2>Realizări</h2>
+                <div class="post-meta">
+                    <span class="author"><i class="fas fa-trophy"></i> Proiecte</span>
+                </div>
+            </div>
+            <div class="post-content">
+                <div class="post-text">
+                    <div class="achievement-item">
+                        <i class="fas fa-robot"></i>
+                        <h3>Discord Chatbot</h3>
+                        <p>Am realizat un program care ajută elevii să-și gestioneze programul, atât testele cât și materia de învățat, având remindere zilnice și teste recapitulative.</p>
+                    </div>
+                    <div class="achievement-item">
+                        <i class="fas fa-users"></i>
+                        <h3>WeMeet</h3>
+                        <p>Am realizat o aplicație care ajută studenții să-și gestioneze timpul liber mai ușor împreună, prin sondaje, partajarea locației, cât și prin grupuri de discuții.</p>
+                    </div>
+                    <div class="achievement-item">
+                        <i class="fas fa-gamepad"></i>
+                        <h3>One Dark Step</h3>
+                        <p>Am dezvoltat un joc 2D, unde un personaj digital este prins într-o lume ce se erodează din cauza întunericului, fiind un joc plin de puzzle-uri.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Despre mine</h3>
+                <p>Blog personal unde împărtășesc pasiunile mele, călătoriile și creațiile artistice.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Link-uri rapide</h3>
+                <ul>
+                    <li><a href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="{% url 'about' %}"><i class="fas fa-user"></i> About me</a></li>
+                    <li><a href="{% url 'galeriefoto' %}"><i class="fas fa-camera"></i> Galerie Foto</a></li>
+                    <li><a href="{% url 'contact' %}"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a class="active" href="{% url 'chatbot' %}"><i class="fas fa-robot"></i> Chatbot</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Pentru contact</h3>
+                <p><i class="fas fa-envelope"></i> aboutme@adrianvasiescu.com</p>
+                <p><i class="fas fa-phone"></i> +40 123 456 789</p>
+                <p><i class="fas fa-map-marker-alt"></i> Timisoara, Romania</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Blogul lui Vasiescu Adrian | Toate drepturile rezervate
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="{% static 'js/aboutme.js' %}"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+</body>
+</html>

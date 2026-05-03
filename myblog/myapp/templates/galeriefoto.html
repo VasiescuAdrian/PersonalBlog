@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasiescu Adrian - Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/galeriefoto.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+</head>
+
+<body>
+    <header class="gallery-header">
+        <div class="header-content">
+            <h1 id="main-title" class="title-animation">O experienta vizuala</h1>
+            <p class="subtitle">Fragmente din viata mea</p>
+        </div>
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </header>
+
+    <nav class="gallery-nav">
+        <div class="nav-container">
+            <ul class="nav-list" id="main-nav">
+                <li><a href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="{% url 'about' %}"><i class="fas fa-user"></i> About me</a></li>
+                <li><a class="active" href="{% url 'galeriefoto' %}"><i class="fas fa-camera"></i> Galerie Foto</a></li>
+                <li><a href="{% url 'contact' %}"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="{% url 'chatbot' %}"><i class="fas fa-robot"></i> Chatbot</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="gallery-main">
+        <div class="slider-container" data-aos="zoom-in">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="{% static 'images/ratza.jpg' %}" alt="O imagine cu o rata draguta">
+                        <div class="slide-overlay">
+                            <h3>O rata simpatica</h3>
+                            <p>Am capturat o imagine cu o rata in lumea ei</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="{% static 'images/ski.jpg' %}" alt="Mountain landscape with skiers">
+                        <div class="slide-overlay">
+                            <h3>Aventura Schi</h3>
+                            <p>Prima data cand am invatat sa schiez la Muntele Mic</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="{% static 'images/railroad.jpg' %}" alt="Train going to Vienna">
+                        <div class="slide-overlay">
+                            <h3>Calatorie in Viena</h3>
+                            <p>La plecare din Viena, calatorie splendida</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="{% static 'images/motivation.jpg' %}" alt="Mountain hiking landscape">
+                        <div class="slide-overlay">
+                            <h3>Cuvinte ce reflecta realitatea</h3>
+                            <p>Intelegerea vietii, cu un strop de motivatie</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="{% static 'images/speech.jpg' %}" alt="Person giving a speech">
+                        <div class="slide-overlay">
+                            <h3>Public Speaking</h3>
+                            <p>Concurs de public speaking in egleza</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-nav prev" onclick="prevSlide()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-nav next" onclick="nextSlide()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="slider-dots"></div>
+            </div>
+        </div>
+
+        <section class="gallery-grid" data-aos="fade-up">
+            <h2 class="section-title">Rasfoieste colectia</h2>
+            <div class="thumbnail-container">
+                <div class="thumbnail" onclick="goToSlide(0)">
+                    <img src="{% static 'images/ratza.jpg' %}" alt="Dark ambient forest">
+                    <div class="thumb-overlay">O rata simpatica</div>
+                </div>
+                <div class="thumbnail" onclick="goToSlide(1)">
+                    <img src="{% static 'images/ski.jpg' %}" alt="Skiing thumbnail">
+                    <div class="thumb-overlay">Aventura Ski</div>
+                </div>
+                <div class="thumbnail" onclick="goToSlide(2)">
+                    <img src="{% static 'images/railroad.jpg' %}" alt="Train thumbnail">
+                    <div class="thumb-overlay">Calatorie in Viena</div>
+                </div>
+                <div class="thumbnail" onclick="goToSlide(3)">
+                    <img src="{% static 'images/motivation.jpg' %}" alt="Great reality check">
+                    <div class="thumb-overlay">Cuvinte ce reflecta realitatea</div>
+                </div>
+                <div class="thumbnail" onclick="goToSlide(4)">
+                    <img src="{% static 'images/speech.jpg' %}" alt="Speech thumbnail">
+                    <div class="thumb-overlay">Public Speaking</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="gallery-footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Galerie Foto</h3>
+                <p>O colectie de imagini ce imi pot descrie o parte din personalitate.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="{% url 'about' %}"><i class="fas fa-user"></i> About me</a></li>
+                    <li><a class="active" href="{% url 'galeriefoto' %}"><i class="fas fa-camera"></i> Galerie Foto</a></li>
+                    <li><a href="{% url 'contact' %}"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="{% url 'chatbot' %}"><i class="fas fa-robot"></i> Chatbot</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Pentru contact</h3>
+                <p><i class="fas fa-envelope"></i> galeriefoto@adrianvasiescu.com</p>
+                <p><i class="fas fa-phone"></i> +40 123 456 789</p>
+                <p><i class="fas fa-map-marker-alt"></i> Timisoara, Romania</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Vasiescu Adrian Visual Gallery | All Rights Reserved
+        </div>
+    </footer>
+
+    <script src="{% static 'js/galeriefoto.js' %}"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+</body>
+</html>

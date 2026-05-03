@@ -1,0 +1,113 @@
+/* Container formular */
+.review-form-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #f9fafb;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+}
+
+/* Titlu formular */
+.review-form-container h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  color: #2f855a;
+  font-weight: 700;
+}
+
+/* Etichete input */
+.review-form-container label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #1a202c;
+}
+
+/* Input-uri text, email, textarea, select */
+.review-form-container input[type="text"],
+.review-form-container input[type="email"],
+.review-form-container textarea,
+.review-form-container select {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1.8px solid #cbd5e0;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.25s ease;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+/* Focus pe input */
+.review-form-container input[type="text"]:focus,
+.review-form-container input[type="email"]:focus,
+.review-form-container textarea:focus,
+.review-form-container select:focus {
+  outline: none;
+  border-color: #2f855a;
+  box-shadow: 0 0 5px rgba(47, 133, 90, 0.5);
+}
+
+/* Textarea specific */
+.review-form-container textarea {
+  min-height: 120px;
+}
+
+/* Buton submit */
+.review-form-container button[type="submit"] {
+  background-color: #2f855a;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 14px 0;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(47, 133, 90, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-form-container button[type="submit"]:hover {
+  background-color: #276749;
+  box-shadow: 0 7px 18px rgba(39, 103, 73, 0.6);
+}
+
+/* Mesaje de eroare/succes (opțional) */
+.form-message {
+  text-align: center;
+  margin-top: 18px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.form-message.error {
+  color: #e53e3e;
+}
+
+.form-message.success {
+  color: #2f855a;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .review-form-container {
+    padding: 25px 20px;
+  }
+
+  .review-form-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .review-form-container button[type="submit"] {
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+}

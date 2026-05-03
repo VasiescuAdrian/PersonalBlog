@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vasiescu Adrian Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/index_BackToTop.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/index_SearchPosts.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/reviews.css' %}">
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1 id="main-title" class="title-animation">Sunt Adrian Vasiescu</h1>
+            <p class="subtitle">Blog personal despre artă, călătorii și pasiuni</p>
+        </div>
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div id="searchContainer">
+            <input type="text" id="searchInput" placeholder="Caută după titlu sau conținut..." />
+            <button id="searchButton"><i class="fas fa-search"></i> Caută</button>
+            <button id="resetButton" style="margin-left:10px;"><i class="fas fa-undo"></i> Resetează</button>
+        </div>
+    </header>
+
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-list" id="main-nav">
+                <li><a class="active" href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="{% url 'about' %}"><i class="fas fa-user"></i> About me</a></li>
+                <li><a href="{% url 'galeriefoto' %}"><i class="fas fa-camera"></i> Galerie Foto</a></li>
+                <li><a href="{% url 'contact' %}"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="{% url 'chatbot' %}"><i class="fas fa-robot"></i> Chatbot</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="blog-container">
+        {% for post in posts %}
+        <article class="blog-post" data-aos="fade-up">
+            <div class="titluri">
+                <h2>{{ post.title }}</h2>
+                <div class="post-meta">
+                    <span class="author"><i class="fas fa-user"></i> {{ post.author }}</span>
+                    <span class="date"><i class="far fa-calendar-alt"></i> {{ post.date }}</span>
+                </div>
+            </div>
+            <div class="post-content">
+                <div class="image-container">
+                    <img src="{{ post.image.url }}" alt="{{ post.image_alt }}" class="post-image hover-zoom" />
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                            <p>Apasă pentru a mări</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-text">
+                    <p>{{ post.content_paragraph1 }}</p>
+                    <p>{{ post.content_paragraph2 }}</p>
+                    <p>{{ post.content_paragraph3 }}</p>
+                </div>
+            </div>
+            <a href="{% url 'post_detail' post.id %}" class="post-detail-button">Vezi detalii</a>
+
+
+
+        </article>
+        {% empty %}
+        <p>Nu există postări de afișat.</p>
+        {% endfor %}
+        <section class="reviews-section">
+  <h2>Reviews</h2>
+  <ul>
+    {% for review in reviews %}
+      <li>
+        <p><strong>{{ review.email }}</strong> ({{ review.date }})</p>
+        <p>Rating: {{ review.rating }}</p>
+        <p>{{ review.comment }}</p>
+        <div class="review-actions">
+          <a href="{% url 'update_review' review.id %}" class="update">Update</a> |
+          <a href="{% url 'delete_review' review.id %}" class="delete">Delete</a>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'submit_review' %}" class="leave-review-btn">Leave a Review</a>
+</section>
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Despre mine</h3>
+                <p>Blog personal unde împărtășesc pasiunile mele, călătoriile și creațiile artistice.</p>
+            </div>
+            <button id="scrollToTopBtn" title="Go to top">↑</button>
+            <div class="footer-section links">
+                <h3>Link-uri rapide</h3>
+                <ul>
+                    <li><a class="active" href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="{% url 'about' %}"><i class="fas fa-user"></i> About me</a></li>
+                    <li><a href="{% url 'galeriefoto' %}"><i class="fas fa-camera"></i> Galerie Foto</a></li>
+                    <li><a href="{% url 'contact' %}"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="{% url 'chatbot' %}"><i class="fas fa-robot"></i> Chatbot</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Pentru contact</h3>
+                <p><i class="fas fa-envelope"></i> index@adrianvasiescu.com</p>
+                <p><i class="fas fa-phone"></i> +40 123 456 789</p>
+                <p><i class="fas fa-map-marker-alt"></i> Timisoara, Romania</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Blogul lui Vasiescu Adrian | Toate drepturile rezervate
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="{% static 'js/index_BackToTop.js' %}"></script>
+    <script src="{% static 'js/index_SearchPosts.js' %}"></script>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+        });
+    </script>
+</body>
+</html>

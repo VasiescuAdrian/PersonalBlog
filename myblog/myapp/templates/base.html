@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ro">
+{% load static %}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}Blog{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}" />
+</head>
+<body>
+
+    <nav class="sticky-nav">
+        <ul class="nav-list">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">Despre mine</a></li>
+            <li><a href="{% url 'galeriefoto' %}">Galerie</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Blogul lui Vasiescu Adrian</p>
+    </footer>
+
+</body>
+</html>
